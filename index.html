@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr-FR">
+
+<head>
+    <meta charset="utf-8" />
+    <title>RealRegatta</title>
+    <link rel="icon" href="favicon.ico" />
+    <meta name="description" content="Naviguez en 3D pour une régatte plus réelle." />
+    <meta name="author" content="Troopers [Laurent Houdusse]">
+    <link rel="stylesheet" href="./css/reset.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="./css/main.css" type="text/css" media="screen, projection" />
+    <script src="./libs/jquery-2.0.3/jquery-2.0.3.min.js"></script>
+    <script src="./libs/three.js.r62/three.min.js"></script>
+    <script src="./libs/requestAnimationFrame/RequestAnimationFrame.js"></script>
+    <script src="./libs/jquery.xdomainajax/jquery.xdomainajax.js"></script>
+    <script src="./libs/stats/stats.min.js"></script>
+    <script src="http://mrdoob.github.com/three.js/examples/fonts/helvetiker_regular.typeface.js"></script>
+    <script src="./libs/realregatta-0.1/realregatta-0.1.js"></script>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-43838344-1', 'free.fr');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div>
+                <h1>Real Regatta</h1>
+                <h5>0.1</h5>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current-item">
+                        <a href="index.html">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="about.html">A propos</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <div class="container">
+                <div class="content">
+                    <canvas id="webglcanvas" width="800" height="600"></canvas>
+                </div>
+            </div>
+            <aside class="sideLeft">
+                <div class="widgets">
+                    <div class="widget">
+                        <h3 class="title">Aide</h3>
+                        <ul>
+                            <li>Rotation de la Terre : Maintenir click gauche de la souris</li>
+                            <li>Zoom : Molette de la souris</li>
+                        </ul>
+                    </div>
+                    <div class="widget">
+                        <h3 class="title">Position</h3>
+                        <p>Classement :
+                            <label id="rank"></label>
+                        </p>
+                        <p>Latitude :
+                            <label id="latitude"></label>
+                        </p>
+                        <p>Longitude :
+                            <label id="longitude"></label>
+                        </p>
+                        <p>Cap :
+                            <label id="cap"></label>
+                        </p>
+                    </div>
+                    <div class="widget">
+                        <h3 class="title">Distance</h3>
+                        <p>Distance parcourue :
+                            <label id="distanceparcourue"></label>
+                        </p>
+                        <p>Distance restante :
+                            <label id="distancerestante"></label>
+                        </p>
+                    </div>
+                    <div class="widget" id="stats-widget">
+                        <h3 class="title">Statistique</h3>
+                    </div>
+                </div>
+            </aside>
+        </section>
+    </div>
+    <footer>
+        <p>by Troopers</p>
+    </footer>
+</body>
+
+</html>
